@@ -1,0 +1,82 @@
+#app-form-auth {
+    display: table;
+    margin-top: 10em;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    }
+    
+    #footerPage{
+       color: black;
+       height: auto;
+       font-size: 16;
+       padding: 25px;
+       border-bottom: 1px solid #343a40;
+       font-family: "Monotype Corsiva";
+       
+    }
+
+    .textAuth {
+      color: #777;
+      padding-left: 15px;
+      margin: 10px;
+      margin-top: 12px;
+      margin-left: 20px;
+      width: 290px;
+      height: 35px;
+      border: 1px solid #c7d0d2;
+      border-radius: 15px;
+      box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
+      -webkit-transition: all .4s ease;
+      -moz-transition: all .4s ease;
+      transition: all .4s ease;
+    }
+    #login{
+      margin-left: 25px;
+    }
+    
+    #auth_log1, #auth_pass2 {
+      padding-left: 1px;
+      margin: 10px;
+      margin-top: 12px;
+      margin-left: 15px;
+    
+    }
+    
+    #multiVxod {
+      padding-left: 10px;
+      margin: 10px;
+      margin-top: 12px;
+      margin-left: 18px;
+    
+    }
+    #span_multy{
+      color: black;
+    }
+    
+    #buttonVxod {
+      display: inline-block;
+      margin-top: 12px;
+      margin-left: 340px;
+      width: 80px;
+      height: 40px;
+      border: 1px solid #c7d0d2;
+      background-color: #343a40;;
+      color:white;
+      border-radius: 25px;
+      animation-name: initial;
+      font-size: 15px;
+      box-shadow: inset 0 1.5px 3px rgba(228, 7, 7, 0.4), 0 0 0 2px #e7dcdd;
+      
+    }
+    #headerForm{
+      background-color: #343a40;;
+      color: white;
+      text-align: center;
+      font-size: 25px;
+      padding: 15px;
+      border-radius: 15px 15px 0px 0px;
+      font-family: "Monotype Corsiva";
+    }
+    

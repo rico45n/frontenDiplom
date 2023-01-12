@@ -1,0 +1,20 @@
+#footer {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #ffff;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color:#343a40;
+    border: 0;
+}
+
+#date_time{
+    color: white;
+    position: absolute;
+}
+.jurnal{
+   color: white;
+}

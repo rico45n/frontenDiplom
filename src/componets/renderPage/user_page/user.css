@@ -1,0 +1,28 @@
+.logoUser{
+   width: 250px;
+   height: 250px;
+   border: 2px solid black;
+   border-radius: 50px;
+  
+}
+.ConteinerUserLogo{
+   padding-top: 100px;
+   padding-left: 300px;
+}
+
+.ConteinerUserInfo{
+   display: table;
+   margin-top: -200px;
+   margin-left: 700px;
+}
+
+.pole{
+   font-family: 'Times New Roman';
+   font-size: 16px;
+   line-height: 50px;
+}
+.blockuser{
+
+   padding-left: 150px;
+ 
+}
