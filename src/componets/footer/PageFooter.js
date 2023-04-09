@@ -1,16 +1,45 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './pagef.css'
-import React, { Component } from 'react';
-import { NavDropdown, Navbar, Nav } from 'react-bootstrap'
+import React, {Component} from 'react';
+import {NavDropdown, Navbar, Nav, Dropdown, DropdownButton, ButtonGroup} from 'react-bootstrap'
+import {Link} from "react-router-dom";
+
 
 class Jurnal extends Component {
     render() {
         return (
-            <NavDropdown title="Журналы">
-                <NavDropdown.Item href="/NetworkJournal">Журнал ip-адресного пространста</NavDropdown.Item>
-                <NavDropdown.Item href="/CrossesDevice">Журнал подключений телекоммуникационного оборудования</NavDropdown.Item>
-                <NavDropdown.Item href="/ConfigurationDevices">Журнал изменений в конфигурации телекоммуникационного оборудования</NavDropdown.Item>
-            </NavDropdown>
+            // <NavDropdown title="Журналы">
+            //     <NavDropdown.Item href="/NetworkJournal">Журнал ip-адресного пространста</NavDropdown.Item>
+            //     <NavDropdown.Item href="/CrossesDevice">Журнал подключений телекоммуникационного
+            //         оборудования</NavDropdown.Item>
+            //     <NavDropdown.Item href="/ConfigurationDevices">Журнал изменений в конфигурации телекоммуникационного
+            //         оборудования</NavDropdown.Item>
+            // </NavDropdown>
+
+        <div className="navbar navbar-expand-lg">
+            <div className="container-fluid">
+                {['Warning'].map(
+                    (variant) => (
+                        <DropdownButton
+                            as={ButtonGroup}
+                            key={variant}
+                            id={`dropdown-variants-${variant}`}
+                            variant={variant.toLowerCase()}
+                            title="Журналы"
+                        >
+                            <Dropdown.Item href="/NetworkJournal">Журнал ip-адресного пространства</Dropdown.Item>
+                            <Dropdown.Item href="/CrossesDevice">Журнал подключений телекоммуникационного
+                                оборудования</Dropdown.Item>
+                            <Dropdown.Item href="/ConfigurationDevices">Журнал изменений в конфигурации телекоммуникационного
+                                оборудования</Dropdown.Item>
+                        </DropdownButton>
+                    ),
+                )}
+            </div>
+        </div>
+
+
+
         );
     }
 }
@@ -18,14 +47,31 @@ class Jurnal extends Component {
 class Network extends Component {
     render() {
         return (
-            <NavDropdown title="Сеть">
-                <NavDropdown.Item href="/AnalysisIP">Анализ ip - адресного пространства</NavDropdown.Item>
-                <NavDropdown.Item href="/NetworkPool">Пулы сети</NavDropdown.Item>
-                <NavDropdown.Item href="/Network">Сети</NavDropdown.Item>
-                <NavDropdown.Item href="/VLAN">VLAN</NavDropdown.Item>
-                <NavDropdown.Item href="/DHCP">DHCP пулы</NavDropdown.Item>
-                <NavDropdown.Item href="/Nodes">Коммутационные центры</NavDropdown.Item>
-            </NavDropdown>
+
+            <div className="navbar navbar-expand-lg">
+                <div className="container-fluid">
+                    {['Warning'].map(
+                        (variant) => (
+                            <DropdownButton
+                                as={ButtonGroup}
+                                key={variant}
+                                id={`dropdown-variants-${variant}`}
+                                variant={variant.toLowerCase()}
+                                title="Сеть"
+                            >
+                                <Dropdown.Item href="/NetworkPool">Пулы сети</Dropdown.Item>
+                                <Dropdown.Item href="/Network">Сети</Dropdown.Item>
+                                <Dropdown.Item href="/VLAN">VLAN</Dropdown.Item>
+                                <Dropdown.Item href="/DHCP">DHCP пулы</Dropdown.Item>
+                                <Dropdown.Item href="/Nodes">Коммутационные центры</Dropdown.Item>
+                            </DropdownButton>
+                        ),
+                    )}
+                </div>
+            </div>
+
+
+
         );
     }
 }
@@ -33,17 +79,26 @@ class Network extends Component {
 class Device extends Component {
     render() {
         return (
-            <NavDropdown title="Устройства">
-                <NavDropdown.Item href="/Devices">Устройства организации</NavDropdown.Item>
-                <NavDropdown.Item href="/TypeDevices">Справочник типов устройств</NavDropdown.Item>
-            </NavDropdown>
-        );
-    }
-}
-class Topologi extends Component {
-    render() {
-        return (
-            <Nav.Link href="/Topologi">Топология сети</Nav.Link>
+
+            <div className="navbar navbar-expand-lg">
+                <div className="container-fluid">
+                    {['Warning'].map(
+                        (variant) => (
+                            <DropdownButton
+                                as={ButtonGroup}
+                                key={variant}
+                                id={`dropdown-variants-${variant}`}
+                                variant={variant.toLowerCase()}
+                                title="Устройства"
+                            >
+                                <Dropdown.Item href="/Devices">Устройства организации</Dropdown.Item>
+                                <Dropdown.Item href="/TypeDevices">Справочник типов устройств</Dropdown.Item>
+                            </DropdownButton>
+                        ),
+                    )}
+                </div>
+            </div>
+
         );
     }
 }
@@ -51,7 +106,12 @@ class Topologi extends Component {
 class Users extends Component {
     render() {
         return (
-            <Nav.Link href="/Users"> Пользователи </Nav.Link>
+            <nav className="navbar navbar-expand-lg bg-primary , navbar-dark">
+                <div className="container-fluid">
+                    <button className="navbar-toggler" type="button"/>
+                    <Link className="btn btn-outline-light" to="/Users">Пользователи</Link>
+                </div>
+            </nav>
         );
     }
 }
@@ -59,7 +119,12 @@ class Users extends Component {
 class Crosses extends Component {
     render() {
         return (
-            <Nav.Link href="/Crosses"> Кроссировки </Nav.Link>
+            <nav className="navbar navbar-expand-lg bg-primary , navbar-dark">
+                <div className="container-fluid">
+                    <button className="navbar-toggler" type="button"/>
+                    <Link className="btn btn-outline-light" to="/Crosses">Кроссировки</Link>
+                </div>
+            </nav>
         );
     }
 }
@@ -67,7 +132,12 @@ class Crosses extends Component {
 class Rooms extends Component {
     render() {
         return (
-            <Nav.Link href="/Rooms"> Помещения </Nav.Link>
+            <nav className="navbar navbar-expand-lg bg-primary , navbar-dark">
+                <div className="container-fluid">
+                    <button className="navbar-toggler" type="button"/>
+                    <Link className="btn btn-outline-light" to="/Rooms">Помещения</Link>
+                </div>
+            </nav>
         );
     }
 }
@@ -80,9 +150,10 @@ class Clock extends Component {
         }
         this.datetime()
     }
-    datetime () {
+
+    datetime() {
         setInterval(() => {
-            this.setState({ timeser: (new Date()).toLocaleString()});     
+            this.setState({timeser: (new Date()).toLocaleString()});
         }, 1000)
     }
 
@@ -99,21 +170,30 @@ class ElementFooter extends Component {
 
     render() {
         return (
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+
+            <Navbar className="navbar navbar-expand-lg bg-primary , navbar-dark">
                 <Nav className="mr-auto">
-                    <Jurnal></Jurnal>
-                    <Network></Network>
-                    <Device></Device>
-                    <Crosses></Crosses>
-                    <Topologi></Topologi>
-                    <Rooms></Rooms>
-                    <Users></Users>
+                    <div className="container-fluid">
+                        <Jurnal></Jurnal>
+                        <Network></Network>
+                        <Device></Device>
+                        <Crosses></Crosses>
+                        <Rooms></Rooms>
+                        <Users></Users>
+                    </div>
                 </Nav>
-                <Nav>
-                    <Nav.Link href="/userpage">На главную
-                    <Clock></Clock>
-                    </Nav.Link>
-                </Nav>
+
+
+                <nav className="navbar navbar-expand-lg bg-primary , navbar-dark">
+                    <div className="container-fluid">
+                        <button className="navbar-toggler" type="button"/>
+                        <Link className="btn btn-outline-light" to="/userpage">На главную
+                            <Clock></Clock>
+                        </Link>
+                        <Link className="btn btn-danger mx-2" to="/auth">Выход
+                        </Link>
+                    </div>
+                </nav>
             </Navbar>
         );
     }
@@ -122,7 +202,7 @@ class ElementFooter extends Component {
 export default class PageFut extends Component {
     render() {
         return (
-            <div><ElementFooter />
+            <div><ElementFooter/>
             </div>
         );
     }

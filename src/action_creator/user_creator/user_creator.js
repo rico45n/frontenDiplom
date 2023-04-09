@@ -1,4 +1,4 @@
-export function getUserSuccess(type, user_info){
+export function getUserSuccess(type, user_info) {
     switch (type) {
         case "auth":
             return {
@@ -10,50 +10,57 @@ export function getUserSuccess(type, user_info){
                 type: "get_all_user_success",
                 user_info: user_info
             };
-        default: return [];
+        default:
+            return [];
     }
 
 }
-export function getUserSelect(type, data){
+
+export function getUserSelect(type, data) {
     switch (type) {
         case "selectUserValue":
             return {
                 type: "selectUserValue",
                 selectUserValue: data
             };
-        default: return [];
+        default:
+            return [];
     }
 }
-export function getOldUserSelect(type, data){
+
+export function getOldUserSelect(type, data) {
     switch (type) {
         case "selectOldUserValue":
             return {
                 type: "selectOldUserValue",
                 selectOldUserValue: data
             };
-        default: return [];
+        default:
+            return [];
     }
 }
 
- export function getUser(type,url) {
-     return async (dispatch) => {
-         await fetch(url)
-             .then(response => {
-                 if (response.status !== 200) {
-                     throw new Error(response.statusText)
-                 }
-                 return response;
-             })
-             .then(response => response.json())
-             .then(user_info => dispatch(
-                 getUserSuccess(type, user_info))
-             )
-     }
- }
+export function getUser(type, url) {
+    return async (dispatch) => {
+        await fetch(url)
+            .then(response => {
+                if (response.status !== 200) {
+                    throw new Error(response.statusText)
+                }
+                    return response;
+            }).then(response => response.json()
+            ).then(user_info => {
+                    dispatch(
+                        getUserSuccess(type, user_info))
+            }).catch(err =>{
+                console.log(err)
+            })
+    }
+}
 
 export function setUser(type, url, data) {
     return (dispatch) => {
-         fetch(url, {
+        fetch(url, {
             credentials: "same-origin", //передаем сессионные данные
             method: 'POST',
             body: JSON.stringify(data),
@@ -93,9 +100,9 @@ export function deleteUser(type, url, data) {
     }
 }
 
-export function updateUser(type, url, id,data) {
+export function updateUser(type, url, id, data) {
     return (dispatch) => {
-        fetch(url+id, {
+        fetch(url + id, {
             credentials: "same-origin", //передаем сессионные данные
             method: 'PUT',
             body: JSON.stringify(data),

@@ -36,16 +36,16 @@ class Users extends Component {
             <Column field="last_name" header="Фамилия"
                     style={{textAlign:'center'}} sortable={true} filter={true} filterMatchMode="contains"
                     body={(value) => {
-                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.user_id)
+                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.userId)
                         {return <div>
                                 <span className="p-float-label">
-                                    <InputText id = "update_last_name" defaultValue={value.last_name} style={{textAlign:'center'}} />
+                                    <InputText id = "update_last_name" defaultValue={value.lastName} style={{textAlign:'center'}} />
                                 </span>
                                </div>
                         }
                         else{
                             return <div>
-                                {value.last_name}
+                                {value.lastName}
                             </div>
                         }
                     }}
@@ -53,39 +53,39 @@ class Users extends Component {
             <Column field="first_name" header="Имя"
                     style={{textAlign:'center'}} sortable={true} filter={true} filterMatchMode="contains"
                     body={(value) => {
-                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.user_id)
+                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.userId)
                         {return <div>
                                 <span className="p-float-label">
-                                    <InputText id = "update_first_name" defaultValue={value.first_name} style={{textAlign:'center'}} />
+                                    <InputText id = "update_first_name" defaultValue={value.firstName} style={{textAlign:'center'}} />
                                 </span>
                         </div>
                         }
                         else{
                             return <div>
-                                {value.first_name}
+                                {value.firstName}
                             </div>
                         }
                     }}></Column>
             <Column field="middle_name" header="Отчество"
                     style={{textAlign:'center'}} sortable={true} filter={true} filterMatchMode="contains"
                     body={(value) => {
-                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.user_id)
+                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.userId)
                         {return <div>
                                 <span className="p-float-label">
-                                    <InputText id = "update_middle_name" defaultValue={value.middle_name} style={{textAlign:'center'}} />
+                                    <InputText id = "update_middle_name" defaultValue={value.middleName} style={{textAlign:'center'}} />
                                 </span>
                         </div>
                         }
                         else{
                             return <div>
-                                {value.middle_name}
+                                {value.middleName}
                             </div>
                         }
                     }}></Column>
             <Column field="email" header="Email"
                     style={{textAlign:'center'}} sortable={true} filter={true} filterMatchMode="contains"
                     body={(value) => {
-                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.user_id)
+                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.userId)
                         {return <div>
                                 <span className="p-float-label">
                                     <InputText id = "update_email" defaultValue={value.email} style={{textAlign:'center'}} />
@@ -101,7 +101,7 @@ class Users extends Component {
             <Column field="phone" header="Номер телефона"
                     style={{textAlign:'center'}} sortable={true} filter={true} filterMatchMode="contains"
                     body={(value) => {
-                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.user_id)
+                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.userId)
                         {return <div>
                                 <span className="p-float-label">
                                     <InputText id = "update_phone" defaultValue={value.phone} style={{textAlign:'center'}} />
@@ -117,33 +117,33 @@ class Users extends Component {
             <Column field="user_login" header="Логин"
                     style={{textAlign:'center'}} sortable={true} filter={true} filterMatchMode="contains"
                     body={(value) => {
-                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.user_id)
+                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.userId)
                         {return <div>
                                 <span className="p-float-label">
-                                    <InputText id = "update_user_login" defaultValue={value.user_login} style={{textAlign:'center'}} />
+                                    <InputText id = "update_user_login" defaultValue={value.userLogin} style={{textAlign:'center'}} />
                                 </span>
                         </div>
                         }
                         else{
                             return <div>
-                                {value.user_login}
+                                {value.userLogin}
                             </div>
                         }
                     }}></Column>
-           
+
             <Column field="user_role" header="Роль"
                     style={{textAlign:'center'}} sortable={true} filter={true} filterMatchMode="contains"
                     body={(value) => {
-                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.user_id)
+                        if (this.props.updateVisible.visible === true && this.props.updateVisible.str === value.userId)
                         {return <div>
                                 <span className="p-float-label">
-                                    <InputText id = "update_user_role" defaultValue={value.user_role} style={{textAlign:'center'}} />
+                                    <InputText id = "update_user_role" defaultValue={value.userRole} style={{textAlign:'center'}} />
                                 </span>
                         </div>
                         }
                         else{
                             return <div>
-                                {value.user_role}
+                                {value.userRole}
                             </div>
                         }
                     }}></Column>
@@ -153,28 +153,28 @@ class Users extends Component {
                     <Button className="p-button-warning p-button-rounded" icon='pi pi-fw pi-pencil' onClick={() => {
                         if(this.props.updateVisible.visible === true){
                             const lastUser = {
-                                user_id: value.user_id,
-                                user_login: document.getElementById("update_user_login").value,
-                                user_password: document.getElementById("update_user_password").value,
-                                last_name: document.getElementById("update_last_name").value,
-                                first_name: document.getElementById("update_first_name").value,
-                                middle_name: document.getElementById("update_middle_name").value,
+                                userId: value.userId,
+                                userLogin: document.getElementById("update_user_login").value,
+                                userPassword: document.getElementById("update_user_password").value,
+                                lastName: document.getElementById("update_last_name").value,
+                                firstName: document.getElementById("update_first_name").value,
+                                middleName: document.getElementById("update_middle_name").value,
                                 email: document.getElementById("update_email").value,
                                 phone: document.getElementById("update_phone").value,
-                                user_role: document.getElementById("update_user_role").value
+                                userRole: document.getElementById("update_user_role").value
                             };
-                            this.props.updateUser("http://localhost:8080/User/UpdateUser/",value.user_id,lastUser)
+                            this.props.updateUser("http://localhost:8080/User/UpdateUser/",value.userId,lastUser)
                             this.props.visibleUpdate(false, null);
                         }
                         else {
-                            this.props.visibleUpdate(true, value.user_id);
+                            this.props.visibleUpdate(true, value.userId);
                             console.log(value);
                         }
 
                     }}></Button>  <span> </span>
                     <Button className="p-button-rounded p-button-danger" icon='pi pi-fw pi-trash' onClick={()=>{
                         if(window.confirm("Вы уверены, что хотите удалить запись?")){
-                            this.props.deleteUser("http://localhost:8080/User/DeleteUser/", value.user_id);
+                            this.props.deleteUser("http://localhost:8080/User/DeleteUser/", value.userId);
                         }
                         else{
                         }
@@ -228,25 +228,29 @@ class Users extends Component {
                               <label htmlFor="user_role">Роль</label>
               </span>
 
-              <Button label="Click" icon="pi pi-check" onClick = {() =>{
+              <Button className="btn btn-outline-dark" label="Добавить" icon="pi pi-check" onClick = {() =>{
                   const addUserJson = {
-                      user_login: document.getElementById("user_login").value,
-                      user_password: document.getElementById("user_password").value,
-                      last_name: document.getElementById("last_name").value,
-                      first_name: document.getElementById("first_name").value,
-                      middle_name: document.getElementById("middle_name").value,
+                      userLogin: document.getElementById("user_login").value,
+                      userPassword: document.getElementById("user_password").value,
+                      lastName: document.getElementById("last_name").value,
+                      firstName: document.getElementById("first_name").value,
+                      middleName: document.getElementById("middle_name").value,
                       email: document.getElementById("email").value,
                       phone: document.getElementById("phone").value,
-                      user_role: document.getElementById("user_role").value
+                      userRole: document.getElementById("user_role").value
                   }
-                  let countFirst = this.props.user_info.length;
-                  this.props.setUser("http://localhost:8080/User/AddUser", addUserJson);
-                  let countLast = this.props.user_info.length;
 
-                  if(countFirst === countLast){
+                  this.props.setUser("http://localhost:8080/User/AddUser", addUserJson);
+                  if(!addUserJson.userLogin ||
+                      !addUserJson.userPassword ||
+                      !addUserJson.lastName ||
+                      !addUserJson.firstName ||
+                      !addUserJson.middleName ||
+                      !addUserJson.phone ||
+                      !addUserJson.userRole ||
+                      !addUserJson.email){
                       alert("Ошибка при добавлении! Проверьте данные!")
-                  }
-                  else{
+                  } else{
                       alert("Запись добавлена!");
                       this.props.visible(false);
                   }
