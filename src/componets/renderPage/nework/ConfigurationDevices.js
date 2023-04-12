@@ -35,7 +35,7 @@ export default function ConfigurationDevices(){
                             <th className="text-center" scope="col">Пользователь изменивший запись</th>
                             <td className="text-center">
                                 <Link className="btn btn-success mx-2"
-                                      to="/addCrossDev">Добавить в журнал изменений в конфигурации телекоммуникационного оборудования</Link>
+                                      to="/addConfigurationDevices">Добавить в журнал изменений в конфигурации телекоммуникационного оборудования</Link>
                             </td>
 
                         </tr>

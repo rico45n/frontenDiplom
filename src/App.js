@@ -47,6 +47,7 @@ import EditNetworkJurnal from "./testing/network/EditNetworkJurnal";
 import CrossesDevice from "./componets/renderPage/nework/CrossesDevice";
 import AddCrossesDev from "./testing/network/AddCrossesDev";
 import ConfigurationDevices from "./componets/renderPage/nework/ConfigurationDevices";
+import AddConfigurationDev from "./testing/network/AddConfigurationDev";
 
 
 class App extends Component {
@@ -88,6 +89,7 @@ class App extends Component {
                     <Route path="/addUser" component={AddUsers}/>
                     <Route path="/editUser/:id" component={EditUsers}/>
                     <Route path="/AddRoom" component={AddRoom}/>
+                    <Route path="/addConfigurationDevices" component={AddConfigurationDev}/>
                     <Route path="/editRoom/:id" component={EditRoom}/>
                     <Route path="/editNetwork/:id" component={EditNetwork}/>
                     <Route path="/addNodes" component={AddNodes}/>
